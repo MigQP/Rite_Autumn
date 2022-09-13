@@ -66,6 +66,7 @@ public class Grabber : MonoBehaviour
 			}
 			else if (!Physics2D.OverlapPoint(holdpoint.position, notgrabbed))
 			{
+				hit.collider.gameObject.GetComponent<LeafSplit>().isGrabbable = false;
 				grabbed = false;
 
 				if (hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)

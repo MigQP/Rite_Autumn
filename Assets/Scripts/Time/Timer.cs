@@ -18,6 +18,7 @@ public class Timer : MonoBehaviour
 
     [Header("Difficulty")]
     public float difficulty;
+    int difMultiplier;
 
     [Header("Ant Body")]
 
@@ -41,6 +42,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         TimerManager.gameTiming = gameTime;
         stopTimer = false;
         timeSlider.maxValue = TimerManager.gameTiming;
@@ -53,6 +55,7 @@ public class Timer : MonoBehaviour
     {
         //float time = TimerManager.gameTiming - Time.time * difficulty;
         float time = TimerManager.gameTiming -= Time.deltaTime * difficulty;
+
 
         if (!TimerManager.isGameOver)
         {
@@ -136,6 +139,10 @@ public class Timer : MonoBehaviour
         ant = antBrain.gameObject.GetComponent<Rigidbody2D>();
         antBody = antBrain.gameObject.GetComponent<BoxCollider2D>();
         legs = antBrain.gameObject.GetComponentsInChildren<LegMover>();
+
+
     }
+
+
 
 }

@@ -9,6 +9,8 @@ public class LeafSplit : MonoBehaviour
     public bool canSplit;
     public bool isGrabbable;
 
+    public int timesGrabbed;
+
     public float leafTime;
     public float currentTime;
 

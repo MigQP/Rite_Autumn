@@ -22,7 +22,11 @@ public class ParentLeaf : MonoBehaviour
             if (collision.tag == "eatable") 
             {
                     leaf = collision.gameObject;
-                    TimerManager.gameTiming += leaf.GetComponent<BitLeaf>().timeToAdd;
+                    if (slider.gameTime > TimerManager.gameTiming + leaf.GetComponent<BitLeaf>().timeToAdd)
+                    {
+                        TimerManager.gameTiming += leaf.GetComponent<BitLeaf>().timeToAdd;
+                    }
+                    //TimerManager.gameTiming += leaf.GetComponent<BitLeaf>().timeToAdd;
                     Destroy(leaf);
                     eatParticle.Play();
 
