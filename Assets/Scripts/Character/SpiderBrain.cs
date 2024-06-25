@@ -49,6 +49,8 @@ public class SpiderBrain : MonoBehaviour
             return;
 
         currspeed = speed * Input.GetAxis("Horizontal");
+
+        Debug.Log(currspeed);
         
         transform.position = new Vector3(transform.position.x + currspeed * Time.deltaTime, transform.position.y, transform.position.z);
         
